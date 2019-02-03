@@ -1,0 +1,31 @@
+{
+  "name": "e-classical_program_list",
+  "version": "1.0.0",
+  "description": "Query e-classical program list",
+  "main": "query.js",
+  "dependencies": {
+    "date-and-time": "^0.6.3",
+    "node-html-parser": "^1.1.12",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "string-format": "^2.0.0",
+    "unescape": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenoyster/e-classical_program_list.git"
+  },
+  "keywords": [
+    "e-classical"
+  ],
+  "author": "greenoyster@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greenoyster/e-classical_program_list/issues"
+  },
+  "homepage": "https://github.com/greenoyster/e-classical_program_list#readme"
+}
