@@ -27,7 +27,7 @@ function makeUrl(time) {
   var args =  {
       radio_type: 1,
       show_day: date.format(time, 'YYYY-MM-DD'),
-      current_time: date.format(time, 'hh:mm'),
+      current_time: date.format(time, 'HH:mm'),
   };
   var uriComponents = [];
   for (key in args) {
@@ -91,9 +91,18 @@ function main() {
   request(options)
     .then(function (response) {
         const root = parser.parse(response);
+
+        const header = root.querySelector('.schedule_container');
+        if (!header) {
+          throw 'no header found';
+        }
+        var introElement = header.childNodes[1].childNodes[1].childNodes[3];
+        printNodes(introElement);
+        console.log();
+
         const list = root.querySelector(".schedule_list");
         if (!list) {
-          throw 'no content found';
+          throw 'no list found';
         }
         const times = list.querySelectorAll(".schedule_list-time");
         const details = list.querySelectorAll(".schedule_list-detail");
