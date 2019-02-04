@@ -93,10 +93,18 @@ function main() {
         const root = parser.parse(response);
 
         const header = root.querySelector('.schedule_container');
-        if (!header) {
-          throw 'no header found';
+        try {
+          var introElement = header.childNodes[1].childNodes[1].childNodes[3];
+        } catch (e) {
+          if (e instanceof TypeError) {
+            throw 'no header found';
+          } else {
+            throw 'unexpected error ' + e;
+          }
         }
-        var introElement = header.childNodes[1].childNodes[1].childNodes[3];
+        if (!introElement) {
+          throw 'no intro element found';
+        }
         printNodes(introElement);
         console.log();
 
